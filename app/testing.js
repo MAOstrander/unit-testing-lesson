@@ -16,7 +16,6 @@ function verifyAlphaNumeric(testSubject) {
   return flag;
 }
 function duplicateCheck(testSubject) {
-	testSubject = testSubject.split(" ");
   var i, out=[], obj={};
 
   for (i = 0; i<testSubject.length; i++) {
@@ -28,7 +27,6 @@ function duplicateCheck(testSubject) {
   return (testSubject.length === out.length);
 }
 function checkWordCount(testSubject) {
-	testSubject = testSubject.split(" ");
   return testSubject.length;
 }
 
@@ -37,6 +35,7 @@ document.getElementById("runTest").addEventListener("click", function doStuff(ev
 	console.log("inputTextArea", inputTextArea);
 
 	console.log("ANY ILLEGAL CHARACTERS?", verifyAlphaNumeric(inputTextArea)); 
+	inputTextArea = inputTextArea.split(" ");
 	console.log("ANY DUPLICATES?", duplicateCheck(inputTextArea));
 	console.log("LESS THAN 100 WORDS?", checkWordCount(inputTextArea));
 })
